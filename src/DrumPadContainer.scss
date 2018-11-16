@@ -1,0 +1,104 @@
+@import './index.scss';
+@import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
+
+$padSize: 100px;
+$displayType: flex;
+$mainFont: 'Spicy Rice', cursive;
+
+//Prevent user selecting text
+@mixin noTextSelect($prop) {
+  -webkit-user-select: $prop;
+  -moz-user-select: $prop;
+  -ms-user-select: $prop;
+  user-select: $prop;
+}
+
+//Drum machine scss class definitions
+.drum-machine {
+  background-image: radial-gradient(
+  ellipse, #3b1261 5%, black);
+  height: 450px;
+  width: 350px;
+  position: relative;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: $displayType;
+  border-radius: 20px;
+  box-shadow: 1px 1px 25px 1px #551a8b;
+}
+.logo {
+  color: #ccac00;
+  font-family: $mainFont;
+  font-size: 21px;
+  position: absolute;
+  top: -2px;
+  left: 240px;
+  text-shadow: 0.5px 0.5px 1px #e5c100;
+  @include noTextSelect(none);
+}
+.logo::before {
+  content: '\262E';
+}
+.display {
+  background-color: blue;
+  color: white;
+  font-family: $mainFont;
+  font-size: 32px;
+  text-align: center;
+  height: 50px;
+  width: 310px;
+  top: 25px;
+  left: 6%;
+  position: absolute;
+  border: 1px solid #ccac00;
+  border-radius: 15px;
+  box-shadow: inset 1px 1px 5px 0.5px black;
+  @include noTextSelect(none);
+}
+.pad-container {
+  margin: 70px auto;
+  .drum-pad {
+    background-color: #ffeb7f;
+    height: $padSize;
+    width: $padSize;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-left: 13px;
+    margin-bottom: 5px;
+    display: inline-block;
+    box-shadow: 0px 0px 5px 0.2px #fffbe5;
+    border-radius: 50px;
+    @include noTextSelect(none);
+  }
+  .drum-pad p {
+    font-family: $mainFont;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 15px;
+  }
+  .drum-pad:active, .drumpad-active {
+    background-color: lighten(blue, 5%);
+    color: darken(white, 20%);
+    text-shadow: 0px 0px 10px white;
+    box-shadow: inset 0px 0px 10px 5px lighten(blue, 20%), 0px 0px 10px 2px lighten(blue, 30%);
+  }
+}
+.footer {
+  color: #9975b9;
+  font-family: $mainFont;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: -0.5px 0.5px black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+  @include noTextSelect(none);
+}
+.footer a {
+  color: #ddd1e7;
+  font-family: $mainFont;
+  text-decoration: none !important;
+  margin-left: 5px;
+}
+.footer a:hover {
+  text-shadow: 1px 1px 30px #eee8f3;
+}
