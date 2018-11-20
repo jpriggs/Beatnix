@@ -31,7 +31,7 @@ const keyDict = [{
 }, {
   keyCode: 68,
   keyTrigger: 'D',
-  id: 'Top-Hi-Hat',
+  id: 'Kick-n-Hat',
   url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
 }, {
   keyCode: 90,

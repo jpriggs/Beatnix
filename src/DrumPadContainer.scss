@@ -27,6 +27,24 @@ $mainFont: 'Spicy Rice', cursive;
   border-radius: 20px;
   box-shadow: 1px 1px 25px 1px #551a8b;
 }
+.drum-machine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 40px 10px #551a8b;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+.drum-machine-active::after {
+    //box-shadow: 1px 1px 40px 10px #551a8b;
+    //transition: box-shadow 0.1s ease-out;
+    opacity: 1;
+}
 .logo {
   color: #ccac00;
   font-family: $mainFont;

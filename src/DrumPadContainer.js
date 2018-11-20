@@ -26,6 +26,13 @@ class ButtonObject extends React.Component{
     const sound = document.getElementById(this.props.keyTrigger);
     sound.currentTime = 0;
     sound.play();
+
+    //Adds box shadow animation on key or button press
+    if(document.getElementById("drum-machine").classList.contains("drum-machine-active")) {
+        document.getElementById("drum-machine").classList.remove("drum-machine-active");
+    }
+    document.getElementById("drum-machine").classList.add("drum-machine-active");
+    setTimeout(() => document.getElementById("drum-machine").classList.remove("drum-machine-active"), 200);
     this.props.showName(this.props.btnId.replace(/-/g, ' '));
   }
   render(){
